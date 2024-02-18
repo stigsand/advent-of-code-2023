@@ -1,7 +1,9 @@
+-- https://adventofcode.com/2023/day/1
+
 module Day01 where
 
 import Data.Char
-import qualified Data.Map as Map
+import Data.Map qualified as Map
 
 findFirstDigit :: [Char] -> Char
 findFirstDigit [] = error "no digit"
@@ -14,7 +16,8 @@ findLastDigit :: [Char] -> Char
 findLastDigit = findFirstDigit . reverse
 
 calibrationValue :: [Char] -> Int
-calibrationValue line = 10 * digitToInt (findFirstDigit line) + digitToInt (findLastDigit line)
+-- calibrationValue line = 10 * digitToInt (findFirstDigit line) + digitToInt (findLastDigit line)
+calibrationValue = (+) <$> ((10 *) . digitToInt . findFirstDigit) <*> digitToInt . findLastDigit
 
 sumCalibrationValues :: [[Char]] -> Int
 sumCalibrationValues = foldl (+) 0 . map calibrationValue
