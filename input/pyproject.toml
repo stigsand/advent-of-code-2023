@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools >= 69.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aoc-download"
+version = "0.0.1"
+description = "Script for downloading Advent of Code input"
+authors = [ { name = "Stig Sandnes", email = "stig_sandnes@hotmail.com" } ]
+#license = { file = "LICENSE" }
+#classifiers = [
+#    "Programming Language :: Python :: 3",
+#    "License :: OSI Approved :: MIT License",
+#    "Operating System :: OS Independent",
+#]
+dependencies = [
+    "aiohttp >=3.9.3",
+    "aiofile >=3.8.8",
+]
+readme = "README.md"
+requires-python = ">=3.10"
+#license = {file = "LICENSE"}
+keywords = ["advent-of-code", "aoc"]
+#classifiers = [
+#    "Development Status :: 4 - Beta",
+#    "Intended Audience :: Developers",
+#    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+#    "Operating System :: OS Independent",
+#    "Programming Language :: Python :: 3",
+#    "Programming Language :: Python :: 3.9",
+#    "Programming Language :: Python :: 3.10",
+#    "Topic :: Games/Entertainment :: Puzzle Games",
+#    "Topic :: Software Development :: Libraries",
+#    "Typing :: Typed",
+#]
+# dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+#    "autoflake >=1.4",
+#    "black >=22.3.0",
+    "flake8 >=7.0.0",
+#    "isort >=5.10.1",
+#    "mypy >=0.961",
+#    "pre-commit >=2.19.0",
+#    "pyupgrade >=2.34.0",
+]
+
+[project.scripts]
+aoc-download = "aoc.download:main"
+
+[project.urls]
+Repository = "https://github.com/stigsand/advent-of-code-2023"
+
+#[tool.isort]
+#profile = "black"
+#multi_line_output = 3
